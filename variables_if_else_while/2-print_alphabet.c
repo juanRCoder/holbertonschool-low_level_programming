@@ -7,7 +7,7 @@
  * Return: Siempre devuelve 0 (éxito)
  */
 
-int main (void)
+int main(void)
 {
 	char *alphabet = "abcdefghijklmnopqrstuvwxyz";
 	int i;
@@ -16,5 +16,6 @@ int main (void)
 	{
 		putchar(alphabet[i]);
 	}
+	putchar('\n');
 	return (0);
 }

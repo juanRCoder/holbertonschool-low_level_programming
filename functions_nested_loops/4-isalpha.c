@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _esalfabetico - verifica si un carácter es alfabético
+ * _isalpha - verifica si un carácter es alfabético
  * @c: El carácter a verificar
  *
  * Return: 1 si c es alfabético, 0 en caso contrario

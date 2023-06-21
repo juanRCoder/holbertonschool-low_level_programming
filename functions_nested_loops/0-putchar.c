@@ -3,7 +3,7 @@
 /**
  * main - Entry point of the program
  *
- * Description: This program prints the word "_putchar" using the _putchar function.
+ * Description: This program prints the word "_putchar"..
  *
  * Return: Always 0 (Success)
  */

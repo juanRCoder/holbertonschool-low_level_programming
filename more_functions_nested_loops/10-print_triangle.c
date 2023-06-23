@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 /**
  * print_triangle - Imprime un triángulo formado por '#'.
  * @size: Tamaño del triángulo.

@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _puts_recursion_reverse - Imprime una cadena al revés, seguida de una nueva línea.
+ * _print_rev_recursion - Imprime una cadena al revés.
  * @s: Puntero a la cadena a imprimir al revés.
  */
 void _print_rev_recursion(char *s)

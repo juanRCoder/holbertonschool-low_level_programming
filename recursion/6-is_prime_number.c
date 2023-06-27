@@ -13,6 +13,7 @@ int is_prime_number(int n)
 	}
 	return (is_prime_recursive(n, 2));
 }
+
 /**
  * is_prime_recursive - Función recursiva para verificar numero primo.
  * @n: Número a verificar.

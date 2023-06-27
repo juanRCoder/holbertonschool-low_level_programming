@@ -4,18 +4,25 @@
  * @n: Número a verificar.
  *
  * Return: 1 si el número es primo, 0 en caso contrario.
+ *
+ * is_prime_recursive - Función recursiva para verificar numero primo.
+ * @n: Número a verificar.
+ * @divisor: Divisor actual a comprobar.
  */
+int is_prime_recursive(int n, int divisor);
+
 int is_prime_number(int n)
 {
 	if (n <= 0)
 	{
 		return (0);
 	}
+
 	return (is_prime_recursive(n, 2));
 }
 
 /**
- * is_prime_recursive - Función recursiva para verificar numero primo.
+ * is_prime_recursive - verifica si un numero es primo o no.
  * @n: Número a verificar.
  * @divisor: Divisor actual a comprobar.
  *

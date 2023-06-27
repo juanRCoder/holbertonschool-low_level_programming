@@ -7,29 +7,31 @@
  */
 int _atoi(char *s)
 {
-	int sign = 1;
-	int result = 0;
-	int i = 0;
+	int z = 0;
+	int neg = 0;
+	int dig = 0;
+	unsigned int conv = 0;
 
-	while (s[i] == ' ')
+	while (s[z])
 	{
-		i++;
+		if (s[z] == '-')
+		{
+			neg++;
+		}
+		else if (s[z] >= '0' && s[z] <= '9')
+		{
+			conv = conv * 10 + s[z] - '0';
+			dig = 1;
+		}
+		else if (dig == 1 && (s[z] < '0' || s[z] > '9'))
+			break;
+		z++;
 	}
-
-	if (s[i] == '-')
+	if (neg % 2 == 0)
 	{
-		sign *= -1;
-		i++;
+		return (conv);
 	}
-	else if (s[i] == '+')
+	else
 	{
-		i++;
-	}
-
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		result = result * 10 + (s[i] - '0');
-		i++;
-	}
-	return (sign * result);
+		return (-conv);
 }

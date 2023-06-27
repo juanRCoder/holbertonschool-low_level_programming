@@ -12,6 +12,7 @@ void puts_half(char *str)
 	char *ptr = str;
 
 	while (*ptr)
+
 	{
 		length++;
 		ptr++;
@@ -23,7 +24,7 @@ void puts_half(char *str)
 	}
 	else
 	{
-		ptr = str + ((length - 1) / 2);
+		ptr = str + ((length + 1) / 2);
 	}
 
 	while (*ptr)

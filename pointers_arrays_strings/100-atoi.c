@@ -11,33 +11,24 @@ int _atoi(char *s)
 	int result = 0;
 	int i = 0;
 
-	/* Ignorar espacios iniciales */
 	while (s[i] == ' ')
 	{
 		i++;
 	}
 
-	/* Verificar signo */
-	if (s[i] == '-' || s[i] == '+')
+	if (s[i] == '-')
 	{
-		if (s[i] == '-')
-			sign *= -1;
-
+		sign *= -1;
+		i++;
+	}
+	else if (s[i] == '+')
+	{
 		i++;
 	}
 
-	/* Convertir números */
-	while (s[i])
+	while (s[i] >= '0' && s[i] <= '9')
 	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = result * 10 + (s[i] - '0');
-			i++;
-		}
-		else
-		{
-			break;
-		}
+		result = result * 10 + (s[i] - '0');
 		i++;
 	}
 	return (sign * result);

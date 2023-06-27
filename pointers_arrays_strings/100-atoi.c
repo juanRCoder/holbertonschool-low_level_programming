@@ -34,4 +34,5 @@ int _atoi(char *s)
 	else
 	{
 		return (-conv);
+	}
 }

@@ -19,6 +19,9 @@
  */
 char *str_concat(char *s1, char *s2)
 {
+	size_t len1, len2;
+	char *concatenated;
+
 	if (s1 == NULL)
 	{
 		s1 = "";
@@ -27,14 +30,10 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 	{
 		s2 = "";
-	}
-
-	size_t len1, len2;
+	};
 
 	len1 = strlen(s1);
-	len2 = strlen(s2);
-
-	char *concatenated;
+	len2 = strlen(s2)
 
 	concatenated = (char *)malloc((len1 + len2 + 1) * sizeof(char));
 

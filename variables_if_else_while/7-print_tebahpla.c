@@ -8,12 +8,11 @@
  */
 int main(void)
 {
-	char *alphabt_reverse = "zyxwvutsrqponmlkjihgfedcba";
-	int i;
+	char i;
 
-	for (i = 0; i < 26; i++)
+	for (i = 'Z'; i >= 'a'; i--)
 	{
-		putchar(alphabt_reverse[i]);
+		putchar(i);
 	}
 	putchar('\n');
 	return (0);

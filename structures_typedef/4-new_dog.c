@@ -42,7 +42,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/*Asigna el age */
-	new_dog->age == age;
+	new_dog->age = age;
 
 	return (new_dog);
 }

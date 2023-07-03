@@ -32,7 +32,7 @@ void print_dog(struct dog *d)
 		}
 		else
 		{
-			printf("Name: (nil)\n", d->owner);
+			printf("Name: (nil)\n");
 		}
 	}
 }

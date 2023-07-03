@@ -10,7 +10,7 @@
  * Description: Esta estructura representa un perro con su nombre,
  * edad y el nombre del dueño.
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;

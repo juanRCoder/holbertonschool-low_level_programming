@@ -33,7 +33,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/*Copia owner a new_dog */
-	new_dog->name = strdup(owner);
+	new_dog->owner = strdup(owner);
 
 	if (new_dog->owner == NULL)
 	{

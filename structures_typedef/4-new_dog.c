@@ -14,16 +14,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 
-	/*Asigna memoria para un nuevo struct perro)*/
 	new_dog = malloc(sizeof(dog_t));
 
-	/*En caso de que la struct perro salga NULL */
 	if (new_dog == NULL)
 	{
 		return (NULL);
 	}
 
-	/*Copia name a new_dog */
 	new_dog->name = strdup(name);
 
 	if (new_dog->name == NULL)
@@ -32,7 +29,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	/*Copia owner a new_dog */
 	new_dog->owner = strdup(owner);
 
 	if (new_dog->owner == NULL)
@@ -41,8 +37,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new_dog);
 		return (NULL);
 	}
-
-	/*Asigna el age */
 	new_dog->age = age;
 
 	return (new_dog);

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "3-calc.h"
 /**
  * op_add - Suma de 2 enteros.
@@ -8,7 +9,11 @@
  */
 int op_add(int a, int b)
 {
-	return (a + b);
+	int add;
+
+	add = a + b;
+
+	return (add);
 }
 
 /**
@@ -20,7 +25,11 @@ int op_add(int a, int b)
  */
 int op_sub(int a, int b)
 {
-	return (a - b);
+	int sub;
+
+	sub = a - b;
+
+	return (sub);
 }
 
 /**

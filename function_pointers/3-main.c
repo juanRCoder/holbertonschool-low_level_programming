@@ -1,15 +1,14 @@
-#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 
 /*
- * main - Entry point
- * @argc: The number of command line arguments
- * @argv: An array of command line argument strings
- *
- * Return: 0 on success.
- */
+  * main - Entry point of the program
+  * @argc: The number of command line arguments
+  * @argv: An array of command line argument strings
+  *
+  * Return: 0 on success
+  */
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
@@ -36,7 +35,6 @@ int main(int argc, char *argv[])
 	}
 
 	result = get_op_func(operator)(num1, num2);
-
 	printf("%d\n", result);
 
 	return (0);

@@ -9,11 +9,7 @@
  */
 int op_add(int a, int b)
 {
-	int add;
-
-	add = a + b;
-
-	return (add);
+	return (a + b);
 }
 
 /**
@@ -25,11 +21,7 @@ int op_add(int a, int b)
  */
 int op_sub(int a, int b)
 {
-	int sub;
-
-	sub = a - b;
-
-	return (sub);
+	return (a - b);
 }
 
 /**
@@ -57,7 +49,7 @@ int op_div(int a, int b)
 }
 
 /**
- * op_div - Devuelve el resto de 2 numeros.
+ * op_mod - Devuelve el resto de 2 numeros.
  * @a: Primero numero.
  * @b: Segundo numero.
  *

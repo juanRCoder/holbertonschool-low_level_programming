@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
-/*
-  * main - Entry point of the program
-  * @argc: The number of command line arguments
-  * @argv: An array of command line argument strings
+/**
+  * main - Execute the operator that given.
+  * @argc: The first parameters
+  * @argv: The second parameters
   *
-  * Return: 0 on success
+  * Return: The return 0.
   */
 int main(int argc, char *argv[])
 {

@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 /**
- *
+ * print_numbers - Imprime los números seguidos de una nueva línea.
+ * @separator: La cadena que se imprimirá entre los números.
+ * @n: El número de enteros pasados a la función.
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -10,26 +12,22 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	int temp;
 
-	/*Si el separator es NULL no imprime nada */
-	if (separator != NULL)
+	i = 0;
+	va_start(ap, n);
+
+	/*Itera todos los elementos */
+	while (i < n)
 	{
-		va_start(ap, n);
-		i = 0;
+		temp = va_arg(ap, int);
+		printf("%d", temp);
 
-		/*Itera todos los elementos */
-		while (i < n)
+		/*Al final no imprime la ', ' y si separator no es NULL*/
+		if (separator != NULL && i < n - 1)
 		{
-			temp = va_arg(ap, int);
-			printf("%d", temp);
-
-			/*Al final no imprime la ', '*/
-			if (i < n - 1)
-			{
-				printf("%s", separator);
-			}
-			i++;
+			printf("%s", separator);
 		}
-		va_end(ap);
+		i++;
 	}
+	va_end(ap);
 	printf("\n");
 }

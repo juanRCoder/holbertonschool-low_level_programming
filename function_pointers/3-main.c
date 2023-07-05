@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	if (get_of_fun(argv[2]) == NULL || argv[2][1] != '\0')
+	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		return (99);
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		return (100);
 	}
 
-	result = get_of_fun(operator)(num1, num2);
+	result = get_op_func(operator)(num1, num2);
 
 	printf("%d\n", result);
 

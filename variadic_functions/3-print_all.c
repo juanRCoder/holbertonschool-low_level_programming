@@ -38,8 +38,9 @@ void print_string(va_list ap)
 	char *str = va_arg(ap, char *);
 
 	if (str == NULL)
+	{
 		str = "(nil)";
-
+	}
 	printf("%s", str);
 }
 
@@ -51,7 +52,9 @@ void print_string(va_list ap)
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i;
+	unsigned int i;
+
+	char *separator = "";
 
 	i = 0;
 
@@ -74,20 +77,23 @@ void print_all(const char * const format, ...)
 				break;
 
 			case 's':
-				print_string(ap);
+				{
+					char *str = va_arg(ap, char *);
+
+					if (str == NULL)
+						str = "(nil)";
+
+					printf("%s%s", separator, str);
+				}	
 				break;
 
 			default:
 				break;
 		}
-
-		if (format[i + 1])
-		{
-			printf(", ");
-		}
-
+		separator = ", ";
 		i++;
 	}
+
 	va_end(ap);
 	printf("\n");
 }

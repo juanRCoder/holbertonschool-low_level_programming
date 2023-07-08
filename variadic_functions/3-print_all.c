@@ -30,18 +30,20 @@ void print_float(va_list ap)
 }
 
 /**
- * print_string - Imprime una cadena.
- * @ap: Lista de argumentos.
+ * print_string - print a string of characters
+ * @ap: first parameter
  */
 void print_string(va_list ap)
 {
-	char *str = va_arg(ap, char *);
+	char *letter;
 
-	if (str == NULL)
+	letter = va_arg(ap, char *);
+
+	if (letter == NULL)
 	{
-		str = "(nil)";
+		letter = "(nil)";
 	}
-	printf("%s", str);
+	printf("%s", letter);
 }
 
 /**
@@ -51,49 +53,38 @@ void print_string(va_list ap)
  */
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	unsigned int i;
+	print_t prints[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
 
-	char *separator = "";
+	unsigned int i, j;
+	va_list ap;
+	char *separator;
 
 	i = 0;
-
+	j = 0;
+	separator = "";
 	va_start(ap, format);
 
-	while (format[i])
+	while (format && format[i])
 	{
-		switch (format[i])
+		j = 0;
+
+		while (prints[j].p)
 		{
-			case 'c':
-				print_char(ap);
-				break;
-
-			case 'i':
-				print_int(ap);
-				break;
-
-			case 'f':
-				print_float(ap);
-				break;
-
-			case 's':
-				{
-					char *str = va_arg(ap, char *);
-
-					if (str == NULL)
-						str = "(nil)";
-
-					printf("%s%s", separator, str);
-				}	
-				break;
-
-			default:
-				break;
+			if (format[i] == *prints[j].p)
+			{
+				printf("%s", separator);
+				prints[j].f(ap);
+				separator = ", ";												}
+			j++;
 		}
-		separator = ", ";
 		i++;
 	}
-
-	va_end(ap);
 	printf("\n");
+	va_end(ap);
 }
